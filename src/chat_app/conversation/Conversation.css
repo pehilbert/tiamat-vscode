@@ -1,3 +1,14 @@
+/* Adjust other styles as necessary, ensuring classes can support light/dark */
+.conversation.light .user-input {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.conversation.dark .user-input {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
 .conversation {
     display: flex;
     flex-direction: column;

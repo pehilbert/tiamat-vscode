@@ -2,10 +2,10 @@ import React from "react";
 import Conversation from "./conversation/Conversation";
 import "./App.css";
 
-const App = () => {
+const App = ({ theme }) => {
     return (
         <>
-            <Conversation />
+            <Conversation theme={theme} />
         </>
     );
 };

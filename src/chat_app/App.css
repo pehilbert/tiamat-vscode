@@ -1,3 +1,11 @@
-body {
-    font-family: Arial, sans-serif;
+/* Default light theme */
+body.light .conversation {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Dark theme */
+body.dark .conversation {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
 }

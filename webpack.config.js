@@ -1,14 +1,13 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/chat_app/index.js', // React app entry point (JavaScript)
+  entry: './src/chat_app/index.js', // React app entry point
   output: {
-    path: path.resolve(__dirname, 'out/chat_app'),
-    filename: 'bundle.js', // The bundled JS file to load in the webview
+    path: path.resolve(__dirname, 'out/chat_app'), // Adjusted output path
+    filename: 'index.js', // The bundled JS file to load in the webview
   },
   resolve: {
-    extensions: ['.js', '.jsx'], // Resolve JavaScript files
+    extensions: ['.js', '.jsx'],
   },
   module: {
     rules: [
@@ -16,23 +15,18 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader', // Babel loader for JS files
+          loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env', '@babel/preset-react'],
           },
         },
       },
       {
-        test: /\.css$/, // Add this rule to handle CSS
+        test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/chat_app/index.html', // The HTML template to use
-    }),
-  ],
   mode: 'development',
   devtool: 'source-map'
 };

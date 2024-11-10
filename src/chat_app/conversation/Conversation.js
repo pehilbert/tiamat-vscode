@@ -3,7 +3,7 @@ import axios from 'axios';
 import Message from "./Message";
 import "./Conversation.css";
 
-const Conversation = () => {
+const Conversation = ( { theme }) => {
     const [prompt, setPrompt] = useState("");
     const [testMode, setTestMode] = useState(false);
     const [messageHistory, setMessageHistory] = useState([]);

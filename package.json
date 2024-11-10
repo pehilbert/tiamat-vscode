@@ -22,7 +22,7 @@
         "title": "Tiamat: Hello World"
       },
       {
-        "command": "tiamat-vscode.chat",
+        "command": "tiamat.openChat",
         "title": "Tiamat: Open Chat"
       }
     ]
