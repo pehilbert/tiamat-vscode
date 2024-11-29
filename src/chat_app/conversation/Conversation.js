@@ -3,6 +3,10 @@ import axios from 'axios';
 import Message from "./Message";
 import "./Conversation.css";
 
+const minID = 1;
+const maxID = 100000;
+const conversationID = Math.floor(Math.random() * (maxID - minID + 1)) + minID;
+
 const Conversation = () => {
     const [prompt, setPrompt] = useState("");
     const [testMode, setTestMode] = useState(false);
@@ -22,11 +26,11 @@ const Conversation = () => {
             return testMessages[Math.floor(Math.random() * testMessages.length)];
         } else {
             try {
-                const response = await axios.post('http://127.0.0.1:8000/v1/assistant/prompt', {
-                    message: msg,
-                    session_id: 'vscode',
+                const response = await axios.post('http://127.0.0.1:5000/api/prompt', {
+                     message: msg,
+                     id: conversationID
                 });
-                return response.data.answer;
+                return response.data.response;
             } catch (error) {
                 console.error('Error:', error);
                 return error.message;
