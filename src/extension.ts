@@ -35,7 +35,7 @@ function getWebviewContent() {
         <body>
             <div id="root"></div>
             <script src="${vscode.Uri.file(
-                path.join(__dirname, 'out', 'chat_app', 'test.js')
+                path.join(__dirname, 'out', 'chat_app', 'index.js')
             ).with({ scheme: 'vscode-resource' })}"></script>
         </body>
         </html>
